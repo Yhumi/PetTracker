@@ -3,15 +3,15 @@ using MongoDB.Bson.Serialization.Attributes;
 
 namespace PetTrackerServer.Models.Database
 {
-    public class User
+    public class Whitelist
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
         public string? Id { get; set; }
 
-        public string Username { get; set; } = null!;
-        public string Server { get; set; } = null!;
-
-        public string UserPublicId { get; set; } = null!;
+        public string OwnerId { get; set; } = null!;
+        public string PetId { get; set; } = null!;
+        
+        public bool Consented { get; set; }
     }
 }

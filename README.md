@@ -10,13 +10,13 @@ Track's player's:
 - Are they in combat?
 - World they're logged into.
 - Party List
-	**Please note, party list will show initials and jobs only.**
+	(**Please note, party list will show initials and jobs only.**)
 - Time since last death and deaths in current instance where applicable.
 
 ## Safety Precautions
 The plugin operates on consent on two levels. 
 One between the server and the client, no data will be sent to the server without the client/current user being opted into sending it.
-The second being between players, no data can be shared between players without the exchange (one-way or mutually) between players.
+The second being between players, no data can be shared between players without mutual consent between players.
 
 If you enable tracking and give someone your code, they can track you.
 
@@ -40,8 +40,8 @@ Once created, you will be given a unique user Id, this is for you to share with 
 In order to **consent** to the server storing information on you, you must go into the plugin settings and enable player metrics being stored.
 At this point data will start being sent to the server and stored against your user, but nobody will be able to see this yet.
 
-In order to **consent** to another player seeing your data, you must send them your personal Id.
-Please note: **When a player has your unique Id for the server they WILL be able to track you. This is irreverisble without deleting your PetTracker data on the server and restarting plugin usage.**
+In order to **consent** to another player seeing your data, you must send them your personal Id, and them send you theirs.
+Please note: **When a player has your unique Id for the server they WILL be able to track you.**
 
 Please use this with only **SERVERS and PEOPLE** you trust. Both of them. 
 This spills so much live data about your character. Its a serious in-game stalking risk and should be taken extremely seriously.
@@ -51,5 +51,3 @@ This spills so much live data about your character. Its a serious in-game stalki
 Current future plans:
 - Support mutliple servers simultaneously.
 - Support more tracking data points.
-- Potentially implement some form of D/s connection that can be revoked and setup per user. 
-	(E.g. Player A and Player B want to connect so Player A can track Player B, but not the other way, but both have to mutually agree and Player B can revoke at any time).

@@ -1,10 +1,13 @@
 using PetTrackerServer.Models;
+using PetTrackerServer.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.Configure<MongoSettings>(
     builder.Configuration.GetSection("Mongo"));
+
+builder.Services.AddSingleton<DatabaseService>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
