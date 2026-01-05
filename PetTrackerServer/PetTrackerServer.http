@@ -1,0 +1,6 @@
+@PetTrackerServer_HostAddress = http://localhost:5230
+
+GET {{PetTrackerServer_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
