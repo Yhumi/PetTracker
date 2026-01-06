@@ -13,29 +13,29 @@ namespace PetTrackerServer.Services
 
         public async Task<(RegistrationResponse response, User? user, string? message)> CreateUser(RegistrationModel newUser)
         {
-            var existingCharacter 
-                = await userCollection.FindAsync(
-                    x => x.Username.Equals(newUser.Username, StringComparison.CurrentCultureIgnoreCase) 
-                    && x.Server.Equals(newUser.World, StringComparison.CurrentCultureIgnoreCase));
-
-            if (existingCharacter != null)
-                return (RegistrationResponse.UserExists, null, $"User already exists.");
-
-            Guid userPublicGuid = Guid.NewGuid();
-            string publicUserId = userPublicGuid.ToString().Split('-').Last();
-
-            var newDataUser = new User()
-            {
-                Username = newUser.Username,
-                Server = newUser.World,
-
-                UserPublicId = publicUserId
-            };
-
             try
             {
+                var existingCharacter 
+                    = await userCollection.FindAsync(
+                        x => x.Username.Equals(newUser.Username, StringComparison.CurrentCultureIgnoreCase) 
+                        && x.Server.Equals(newUser.World, StringComparison.CurrentCultureIgnoreCase));
+
+                if (existingCharacter != null)
+                    return (RegistrationResponse.UserExists, null, $"User already exists.");
+
+                Guid userPublicGuid = Guid.NewGuid();
+                string publicUserId = userPublicGuid.ToString().Split('-').Last();
+
+                var newDataUser = new User()
+                {
+                    Username = newUser.Username,
+                    Server = newUser.World,
+
+                    UserPublicId = publicUserId
+                };
+            
                 await userCollection.InsertOneAsync(newDataUser);
-                return (RegistrationResponse.UserExists, newDataUser, null);
+                return (RegistrationResponse.Ok, newDataUser, null);
             }
             catch (Exception ex)
             {

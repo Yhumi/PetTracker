@@ -8,6 +8,7 @@ builder.Services.Configure<MongoSettings>(
     builder.Configuration.GetSection("Mongo"));
 
 builder.Services.AddSingleton<DatabaseService>();
+builder.Services.AddSingleton<UserService>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

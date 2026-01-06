@@ -12,7 +12,7 @@ namespace PetTrackerServer.Controllers
         [HttpGet("{publicId}")]
         public string GetAllRequests(int publicId)
         {
-            
+            return "";
         }
 
         // POST api/<WhitelistController>
